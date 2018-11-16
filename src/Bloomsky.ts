@@ -134,7 +134,7 @@ export default class Bloomsky {
     if (this.debug) { this.log("Add Accessory: " + station.DeviceID); }
 
     const uuid = Bloomsky.UUIDGen.generate(station.DeviceID);
-    const newAccessory = new Bloomsky.Accessory(station.DeviceName, uuid, Bloomsky.Accessory.Categories.CAMERA);
+    const newAccessory = new Bloomsky.Accessory(station.DeviceName, uuid);
     const cameraSource = this.getFfmpegForStationWithUuid(uuid);
     const countBefore = newAccessory.services.length;
 
